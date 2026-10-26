@@ -1,12 +1,28 @@
-# create class
+# create class,represent and manage product
+# __product_id:String
+# __name:String
+# __price:float
+# __stock:int
+
+# update_stock(quantity:int)void
+# display_information():void
+
+# encapsulation-method checks__
+
+# -PRODUCT-
+# STORE PRODUCT INFO
+# MANAGE STATE
+
 class Product:
-    # from previous,dict have id/name/price/stock
-    # after self.__ (private attributes)
+    # from previous, have id/name/price/stock-parameters
+    # self.__ (private attributes,only in class)
     def __init__(self, product_id, name, price, stock):
         self.__product_id = product_id
         self.__name = name
         self.__price = price
         self.__stock = stock
+
+# class-object(passed from main)-parameter-attribute
 
 # get id from class
     def get_product_id(self):
