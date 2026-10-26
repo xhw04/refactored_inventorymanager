@@ -37,20 +37,20 @@ def save_inventory(inventory):
 
 def load_inventory():
     inventory = Inventory()
-    if os.path.exist(file_name):
+    if os.path.exists(file_name):
         with open(file_name, "r") as file:
             data = json.load(file)
         for item in data:
             inventory.add_product(
-                Product(item["ID"]), item["Name"], item["Price"], item["Stock"])
+                Product(item["ID"], item["Name"], item["Price"], item["Stock"]))
             print("inventory.json found.Inventory loaded successfully.")
-        else:
-            print("inventory.json not found.Creating default inventory.")
-            inventory.add_product(Product("P001", "Laptop", 1200.00, 15))
-            inventory.add_product(Product("P002", "Mouse", 25.50, 40))
-            inventory.add_product(Product("P003", "Keyboard", 45.00, 25))
-            save_inventory(inventory)
-        return inventory
+    else:
+        print("inventory.json not found.Creating default inventory.")
+        inventory.add_product(Product("P001", "Laptop", 1200.00, 15))
+        inventory.add_product(Product("P002", "Mouse", 25.50, 40))
+        inventory.add_product(Product("P003", "Keyboard", 45.00, 25))
+        save_inventory(inventory)
+    return inventory
 
 # 2.add product
 
