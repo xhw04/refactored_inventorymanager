@@ -1,3 +1,8 @@
+# STORE PRODUCT
+# ADD PRODUCT
+# SEARCH PRODUCT
+# DISPLAY PRODUCT
+
 # create class
 class Inventory:
     def __init__(self):
@@ -19,6 +24,7 @@ class Inventory:
 
 
 # 4.search from dict
+
 
     def search_product(self, product_id):
         for product in self.__products:
